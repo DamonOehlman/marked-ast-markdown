@@ -10,7 +10,8 @@ var samples = [
   'simple.md',
   'links.md',
   'blockquote.md',
-  'code.md'
+  'code.md',
+  'image.md'
 ];
 var loadedSamples;
 var expectedOutputs;

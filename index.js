@@ -7,6 +7,15 @@ function createChar(x) {
   }
 }
 
+function getUrl(node) {
+  var href = node.href;
+  if (node.title) {
+    href += ' "' + node.title + '"';
+  }
+
+  return href;
+}
+
 var generators = {
   heading: function(node) {
     return times(node.level).map(createChar('#')).join('') + ' ' + node.text.map(writeNode).join(' ') + '\n\n';
@@ -25,16 +34,19 @@ var generators = {
   },
 
   link: function(node) {
-    var href = node.href;
-    if (node.title) {
-      href += ' "' + node.title + '"';
-    }
+    var href = getUrl(node);
 
     if (typeof node.text == 'string' || (node.text instanceof String)) {
       return '<' + href + '>';
     }
 
     return '[' + node.text.map(writeNode).join('') + '](' + href + ')';
+  },
+
+  image: function(node) {
+    var href = getUrl(node);
+
+    return '![' + node.text + '](' + href + ')';
   },
 
   blockquote: function(node) {
