@@ -7,7 +7,8 @@ var test = require('tape');
 var samples = [
   'heading.md',
   'headings.md',
-  'simple.md'
+  'simple.md',
+  'links.md'
 ];
 var loadedSamples;
 var expectedOutputs;
