@@ -9,7 +9,7 @@ function createChar(x) {
 
 var generators = {
   heading: function(node) {
-    return times(node.level).map(createChar('#')).join('') + ' ' + node.text.map(writeNode).join(' ') + '\n';
+    return times(node.level).map(createChar('#')).join('') + ' ' + node.text.map(writeNode).join(' ') + '\n\n';
   },
 
   paragraph: function(node) {
