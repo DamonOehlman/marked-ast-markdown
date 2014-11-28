@@ -35,6 +35,10 @@ var generators = {
     }
 
     return '[' + node.text.map(writeNode).join('') + '](' + href + ')';
+  },
+
+  blockquote: function(node) {
+    return '> ' + node.quote.map(writeNode);
   }
 };
 
