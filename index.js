@@ -17,11 +17,11 @@ var generators = {
   },
 
   strong: function(node) {
-    return '**' + node.text.map(writeNode).join(' ') + '**';
+    return '**' + node.text.map(writeNode).join('') + '**';
   },
 
   em: function(node) {
-    return '_' + node.text.map(writeNode).join(' ') + '_';
+    return '_' + node.text.map(writeNode).join('') + '_';
   }
 };
 
