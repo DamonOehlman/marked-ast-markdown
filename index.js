@@ -39,6 +39,10 @@ var generators = {
 
   blockquote: function(node) {
     return '> ' + node.quote.map(writeNode);
+  },
+
+  code: function(node) {
+    return '```' + (node.lang || '') + '\n' + node.code + '\n' + '```' + '\n\n';
   }
 };
 

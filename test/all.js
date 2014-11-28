@@ -9,7 +9,8 @@ var samples = [
   'headings.md',
   'simple.md',
   'links.md',
-  'blockquote.md'
+  'blockquote.md',
+  'code.md'
 ];
 var loadedSamples;
 var expectedOutputs;
