@@ -22,6 +22,19 @@ var generators = {
 
   em: function(node) {
     return '_' + node.text.map(writeNode).join('') + '_';
+  },
+
+  link: function(node) {
+    var href = node.href;
+    if (node.title) {
+      href += ' "' + node.title + '"';
+    }
+
+    if (typeof node.text == 'string' || (node.text instanceof String)) {
+      return '<' + href + '>';
+    }
+
+    return '[' + node.text.map(writeNode).join('') + '](' + href + ')';
   }
 };
 
