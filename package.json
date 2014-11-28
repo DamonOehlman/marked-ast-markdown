@@ -1,0 +1,24 @@
+{
+  "name": "marked-ast-markdown",
+  "version": "1.0.0",
+  "description": "Given a marked-ast AST generate markdown output",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DamonOehlman/marked-ast-markdown.git"
+  },
+  "keywords": [
+    "marked",
+    "ast",
+    "markdown"
+  ],
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DamonOehlman/marked-ast-markdown/issues"
+  },
+  "homepage": "https://github.com/DamonOehlman/marked-ast-markdown"
+}
