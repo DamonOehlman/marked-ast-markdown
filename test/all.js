@@ -4,7 +4,11 @@ var async = require('async');
 var marked = require('marked-ast');
 var toMarkdown = require('..');
 var test = require('tape');
-var samples = ['heading.md'];
+var samples = [
+  'heading.md',
+  'headings.md',
+  'simple.md'
+];
 var loadedSamples;
 var expectedOutputs;
 

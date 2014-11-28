@@ -9,7 +9,19 @@ function createChar(x) {
 
 var generators = {
   heading: function(node) {
-    return times(node.level).map(createChar('#')).join('') + ' ' + node.text.map(writeNode) + '\n';
+    return times(node.level).map(createChar('#')).join('') + ' ' + node.text.map(writeNode).join(' ') + '\n';
+  },
+
+  paragraph: function(node) {
+    return node.text.map(writeNode).join('') + '\n';
+  },
+
+  strong: function(node) {
+    return '**' + node.text.map(writeNode).join(' ') + '**';
+  },
+
+  em: function(node) {
+    return '_' + node.text.map(writeNode).join(' ') + '_';
   }
 };
 
