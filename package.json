@@ -25,5 +25,9 @@
     "async": "^0.9.0",
     "marked-ast": "^0.1.0",
     "tape": "^3.0.3"
+  },
+  "dependencies": {
+    "entities": "^1.1.1",
+    "whisk": "^1.0.0"
   }
 }
