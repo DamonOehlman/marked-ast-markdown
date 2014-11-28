@@ -13,7 +13,7 @@ var generators = {
   },
 
   paragraph: function(node) {
-    return node.text.map(writeNode).join('') + '\n';
+    return node.text.map(writeNode).join('') + '\n\n';
   },
 
   strong: function(node) {
