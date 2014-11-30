@@ -55,6 +55,22 @@ var generators = {
 
   code: function(node) {
     return '```' + (node.lang || '') + '\n' + node.code + '\n' + '```' + '\n\n';
+  },
+
+  table: function(node) {
+    return [
+      node.header.map(writeNode),
+      node.header.map(writeTableHeaderLine).join(''),
+      node.body.map(writeNode).join('\n')
+    ].join('\n') + '\n\n';
+  },
+
+  tablerow: function(node) {
+    return '| ' + node.content.map(writeNode).join(' | ') + ' |';
+  },
+
+  tablecell: function(node) {
+    return node.content.map(writeNode).join('');
   }
 };
 
@@ -70,6 +86,34 @@ function writeNode(node) {
   }
 
   return '';
+}
+
+function writeTableHeaderLine(node) {
+  return '| ' + node.content.map(function(cell) {
+    var headerLen = cell.content.reduce(function(memo, item) {
+      return (memo || 0) + (item.length ? item.length : 0);
+    }, 0);
+    var header = times(headerLen).map(createChar('-')).join('');
+
+    switch ((cell.flags || {}).align) {
+      case 'left': {
+        header = ':' + header.slice(1);
+        break;
+      }
+
+      case 'right': {
+        header = header.slice(0, -1) + ':';
+        break;
+      }
+
+      case 'center': {
+        header = ':' + header.slice(1, -1) + ':';
+        break;
+      }
+    }
+
+    return header;
+  }).join(' | ') + ' |';
 }
 
 module.exports = function(ast) {

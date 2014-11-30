@@ -11,7 +11,8 @@ var samples = [
   'links.md',
   'blockquote.md',
   'code.md',
-  'image.md'
+  'image.md',
+  'tables.md'
 ];
 var loadedSamples;
 var expectedOutputs;
