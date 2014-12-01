@@ -12,7 +12,9 @@ var samples = [
   'blockquote.md',
   'code.md',
   'image.md',
-  'tables.md'
+  'tables.md',
+  'comment.md',
+  'html.md'
 ];
 var loadedSamples;
 var expectedOutputs;

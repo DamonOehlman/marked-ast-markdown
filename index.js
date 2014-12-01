@@ -71,6 +71,10 @@ var generators = {
 
   tablecell: function(node) {
     return node.content.map(writeNode).join('');
+  },
+
+  html: function(node) {
+    return node.html.map(writeNode).join('') + '\n';
   }
 };
 
