@@ -14,7 +14,8 @@ var samples = [
   'image.md',
   'tables.md',
   'comment.md',
-  'html.md'
+  'html.md',
+  'list.md'
 ];
 var loadedSamples;
 var expectedOutputs;

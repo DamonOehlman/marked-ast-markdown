@@ -49,6 +49,20 @@ var generators = {
     return '![' + node.text + '](' + href + ')';
   },
 
+  list: function (node, index, ast) {
+    return (function list(node, ind) {
+      var c = 0;
+      return node.body.map(function (item) {
+        var charPrefix = node.ordered ? (++c + '. ') : '* ';
+        return charPrefix + item.text.map(function (node) {
+          if (typeof node === 'string') { return node; }
+          if (node.type !== 'list') { return writeNode(node); }
+          return ind + list(node, ind + '  ');
+        }).join('\n')
+      }).join('\n')
+    })(node, '  ') + ((index !== ast.length-1) ? '\n\n' : '');
+  },
+
   blockquote: function(node) {
     return '> ' + node.quote.map(writeNode);
   },
@@ -78,7 +92,7 @@ var generators = {
   }
 };
 
-function writeNode(node) {
+function writeNode(node, index, ast) {
   var handler = generators[node.type];
 
   if (typeof node == 'string' || (node instanceof String)) {
@@ -86,7 +100,7 @@ function writeNode(node) {
   }
 
   if (typeof handler == 'function') {
-    return handler(node);
+    return handler(node, index, ast);
   }
 
   return '';
