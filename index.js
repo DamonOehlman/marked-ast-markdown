@@ -71,6 +71,10 @@ var generators = {
     return '```' + (node.lang || '') + '\n' + node.code + '\n' + '```' + '\n\n';
   },
 
+  codespan: function (node) {
+    return '`' + node.text + '`';
+  },
+
   table: function(node) {
     return [
       node.header.map(writeNode),
