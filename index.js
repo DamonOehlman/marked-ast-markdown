@@ -51,16 +51,15 @@ var generators = {
 
   list: function (node, index, ast) {
     return (function list(node, ind) {
-      var c = 0;
-      return node.body.map(function (item) {
-        var charPrefix = node.ordered ? (++c + '. ') : '* ';
-        return charPrefix + item.text.map(function (node) {
+      return node.body.map(function (item, c) {
+        var charPrefix = node.ordered ? ((c+1) + '. ') : '* ';
+        return '\n' + ind + charPrefix + item.text.map(function (node) {
           if (typeof node === 'string') { return node; }
           if (node.type !== 'list') { return writeNode(node); }
-          return ind + list(node, ind + '  ');
-        }).join('\n')
-      }).join('\n')
-    })(node, '  ') + ((index !== ast.length-1) ? '\n\n' : '');
+          return list(node, ind + '  ');
+        }).join('')
+      }).join('')
+    })(node, '').slice(1) + ((index !== ast.length-1) ? '\n\n\n' : '');
   },
 
   blockquote: function(node) {
@@ -95,6 +94,7 @@ var generators = {
     return node.html.map(writeNode).join('') + '\n';
   }
 };
+
 
 function writeNode(node, index, ast) {
   var handler = generators[node.type];
