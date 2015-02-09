@@ -92,6 +92,9 @@ var generators = {
 
   html: function(node) {
     return node.html.map(writeNode).join('') + '\n';
+  },
+  hr: function (node, index, ast) {
+    return '---' + ((index !== ast.length-1) ? '\n\n' : '');
   }
 };
 

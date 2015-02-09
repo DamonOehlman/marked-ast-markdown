@@ -16,7 +16,8 @@ var samples = [
   'comment.md',
   'html.md',
   'list.md',
-  'codespan.md'
+  'codespan.md',
+  'hr.md'
 ];
 var loadedSamples;
 var expectedOutputs;
