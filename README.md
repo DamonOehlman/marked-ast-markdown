@@ -14,7 +14,7 @@ You may be wondering why you would do this.  In my case, I wanted to parse a mar
 
 ```js
 const marked = require('marked-ast');
-const { toMarkdown } = require('..');
+const { toMarkdown } = require('marked-ast-markdown');
 
 const ast = marked.parse(`
 ## Test
