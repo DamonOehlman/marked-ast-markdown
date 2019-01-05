@@ -1,10 +1,10 @@
-var fs = require('fs');
-var path = require('path');
-var async = require('async');
-var marked = require('marked-ast');
-var toMarkdown = require('..');
-var test = require('tape');
-var samples = [
+const fs = require('fs');
+const path = require('path');
+const async = require('async');
+const marked = require('marked-ast');
+const { toMarkdown } = require('..');
+const test = require('tape');
+const samples = [
   'heading.md',
   'headings.md',
   'simple.md',
@@ -19,8 +19,8 @@ var samples = [
   'codespan.md',
   'hr.md'
 ];
-var loadedSamples;
-var expectedOutputs;
+let loadedSamples;
+let expectedOutputs;
 
 test('load all the samples', function(t) {
 
