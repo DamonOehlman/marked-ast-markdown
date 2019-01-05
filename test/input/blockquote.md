@@ -6,4 +6,3 @@ And hold their manhoods cheap whiles any speaks
 That fought with us upon Saint Crispin’s day.
 
 End of quoted section.
-

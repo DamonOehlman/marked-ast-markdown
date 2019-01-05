@@ -9,7 +9,6 @@
     * in each
   * indent level
 
-
 1. I am an ordered item
 2. as am I
 3. We are in an ordered list
