@@ -15,9 +15,11 @@ const samples = [
   'tables.md',
   'comment.md',
   'html.md',
+  'simple-list.md',
   'list.md',
   'codespan.md',
-  'hr.md'
+  'hr.md',
+  'double-encoding.md',
 ];
 let loadedSamples;
 let expectedOutputs;
