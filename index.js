@@ -19,7 +19,7 @@ module.exports = {
 };
 
 const generators = {
-  heading: (node, index, ast) => `${HEADERS[node.level]} ${toText(node.text, ' ')}${newLines(ast, index)}`,
+  heading: (node, index, ast) => `${HEADERS[node.level]} ${toText(node.text, '')}${newLines(ast, index)}`,
   paragraph: (node, index, ast) => `${toText(node.text)}${newLines(ast, index)}`,
   strong: (node) => `**${toText(node.text)}**`,
   em: (node) => `_${toText(node.text)}_`,

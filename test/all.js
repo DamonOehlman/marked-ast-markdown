@@ -55,6 +55,6 @@ samples.forEach(function(filename, idx) {
     t.plan(1);
 
     ast = marked.parse(loadedSamples[idx]);
-    t.equal(toMarkdown(ast), expectedOutputs[idx], 'matched expected');
+    t.equal(toMarkdown(ast) + '\n', expectedOutputs[idx], 'matched expected');
   });
 });
